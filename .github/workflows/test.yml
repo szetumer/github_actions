@@ -6,10 +6,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v4
-
-            - name: Build and run container
-              uses: docker/build-push-action@v6
-              with:
-                context: .
-                push: false
-                tags: ghcr.io/${{github.repository}}:test
+            - name: Build Docker image
+              run: docker build -t epic-app:test .
+            - name: Run container
+              run: docker run -rm 
