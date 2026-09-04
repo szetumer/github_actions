@@ -16,4 +16,4 @@ jobs:
             - name: Build Docker image
               run: docker build -t epic-app:test .
             - name: Run container
-              run: docker run -rm 
+              run: docker run --rm 
