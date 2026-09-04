@@ -1,0 +1,13 @@
+name: Test Docker Build
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Build and run container
+            uses: docker/build-push-action@v4
+        with:
+                context: .
+                push: false
+                tags: ghcr.io/${{github.repository}}:test
