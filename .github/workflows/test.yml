@@ -6,13 +6,6 @@ jobs:
 
         steps:
             - uses: actions/checkout@v4
-            - name: Debug files
-              run: |
-                pwd
-                echo "Top level files:"
-                ls -la
-                echo "Dockerfiles anywhere nearby:"
-                find . -maxdepth 4 -iname "Dockerfile*" -print
             - name: Build Docker image
               run: docker build -t epic-app:test .
             - name: Run container
